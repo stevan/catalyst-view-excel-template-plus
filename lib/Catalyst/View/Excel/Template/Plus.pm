@@ -51,12 +51,12 @@ sub process {
     my $etp_config = $c->stash->{etp_config} || $self->etp_config;
     my $etp_params = $c->stash->{etp_params} || $self->etp_params;
     
-    my $excel = $self->create_template_object(
+    my $excel = $self->create_template_object($c => (
         engine   => $etp_engine,
         template => $template,
         config   => $etp_config,
         params   => $etp_params,        
-    );
+    ));
 
     $excel->param( $self->get_template_params($c) );
     
@@ -65,7 +65,7 @@ sub process {
 }
 
 sub create_template_object {
-    my ($self, %options) = @_;
+    my ($self, $c, %options) = @_;
     Excel::Template::Plus->new( %options );    
 }
 
