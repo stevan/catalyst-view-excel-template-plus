@@ -51,17 +51,22 @@ sub process {
     my $etp_config = $c->stash->{etp_config} || $self->etp_config;
     my $etp_params = $c->stash->{etp_params} || $self->etp_params;
     
-    my $excel = Excel::Template::Plus->new(
-          engine   => $etp_engine,
-          template => $template,
-          config   => $etp_config,
-          params   => $etp_params,
-      );
+    my $excel = $self->create_template_object(
+        engine   => $etp_engine,
+        template => $template,
+        config   => $etp_config,
+        params   => $etp_params,        
+    );
 
     $excel->param( $self->get_template_params($c) );
     
     $c->response->content_type('application/x-msexcel');
     $c->response->body($excel->output);
+}
+
+sub create_template_object {
+    my ($self, %options) = @_;
+    Excel::Template::Plus->new( %options );    
 }
 
 sub get_template_filename {
@@ -119,6 +124,8 @@ This really just handles consuming the configuration parameters.
 =item B<get_template_filename>
 
 =item B<get_template_params>
+
+=item B<create_template_object>
 
 =back
 
