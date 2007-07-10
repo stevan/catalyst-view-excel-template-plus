@@ -1,0 +1,16 @@
+Build.PL
+Changes
+Makefile.PL
+META.yml
+MANIFEST
+MANIFEST.SKIP
+README
+lib/Catalyst/View/Excel/Template/Plus.pm
+t/000_load.t
+t/001_basic.t
+t/pod.t
+t/pod_coverage.t
+t/lib/TestApp.pm
+t/lib/TestApp/View/Excel.pm
+t/templates/test_one.xml.tmpl
+t/xls/001_basic.xls

@@ -7,7 +7,7 @@ my $build = Module::Build->new(
     license => 'perl',
     requires => {   
         'Catalyst::Runtime'     => '0',
-        'Excel::Template::Plus' => '0',
+        'Excel::Template::Plus' => '0.03',
     },
     optional => {
     },
