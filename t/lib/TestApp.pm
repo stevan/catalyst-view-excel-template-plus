@@ -24,17 +24,6 @@ __PACKAGE__->config({
 
 __PACKAGE__->setup;
 
-sub test_one : Global {
-    my ($self, $c) = @_;  
-
-    $c->stash->{template} = 'test_one.xml.tmpl';
-    
-    $c->stash->{message} = 'Hello (Excel) World';
-
-    $c->forward('TestApp::View::Excel');
-}
-
-
 1;
 
 __END__
