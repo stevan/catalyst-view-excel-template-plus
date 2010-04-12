@@ -20,6 +20,11 @@ my $build = Module::Build->new(
     add_to_cleanup => [
         'META.yml', '*.bak', '*.gz', 'Makefile.PL',
     ],
+    meta_merge => {
+        resources => {
+            repository  => 'http://github.com/stevan/catalyst-view-excel-template-plus/'
+        }
+    },
 );
 
 $build->create_build_script;
