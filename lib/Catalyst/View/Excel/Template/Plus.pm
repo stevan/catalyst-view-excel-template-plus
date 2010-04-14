@@ -33,7 +33,11 @@ sub new {
     $self->etp_engine($args->{etp_engine});
     $self->etp_config($args->{etp_config});
     $self->etp_params($args->{etp_params});
-    
+
+    if ( $self->config->{TEMPLATE_EXTENSION} !~ /\./ ){
+        $c->log->warn(qq/Missing . (dot) in TEMPLATE_EXTENSION ( $class ), the attitude has changed with version 0.02./);
+    }
+
     return $self;
 }
 
@@ -72,8 +76,8 @@ sub create_template_object {
 sub get_template_filename {
     my ($self, $c) = @_;
     $c->stash->{template}
-        || 
-    ($c->action . '.xml.' . $self->config->{TEMPLATE_EXTENSION});    
+        ||
+    ($c->action . '.xml' . $self->config->{TEMPLATE_EXTENSION});
 }
 
 sub get_template_params {
