@@ -34,7 +34,7 @@ sub new {
     $self->etp_config($args->{etp_config});
     $self->etp_params($args->{etp_params});
 
-    if ( $self->config->{TEMPLATE_EXTENSION} !~ /\./ ){
+    if ( defined $self->config->{TEMPLATE_EXTENSION} && $self->config->{TEMPLATE_EXTENSION} !~ /\./ ){
         $c->log->warn(qq/Missing . (dot) in TEMPLATE_EXTENSION ( $class ), the attitude has changed with version 0.02./);
     }
 
