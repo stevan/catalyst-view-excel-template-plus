@@ -98,6 +98,10 @@ Catalyst::View::Excel::Template::Plus - A Catalyst View for Excel::Template::Plu
 
 =head1 SYNOPSIS
 
+# use the helper to create your View
+
+    MyApp_create.pl view Excel Excel::Template::Plus
+
 =head1 DESCRIPTION
 
 This is a Catalyst View subclass which can handle rendering excel content
