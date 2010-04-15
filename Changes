@@ -1,4 +1,10 @@
 Changes for Catalyst::View::Excel::Template::Plus
+# Date format "%A, %B %d, %Y"
 
+0.02 Thursday, April 15, 2010
+    - fixed rt#53781 / NEXT deprecated
+    - fixed rt#42166 / Auto determining template filename broken
+    - Add helper class, Catalyst::Helper::View::Excel::Template::Plus
+    
 0.01 Monday, July 9, 2007
     - initial release

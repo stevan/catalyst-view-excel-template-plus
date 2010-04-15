@@ -11,7 +11,7 @@ Catalyst::Helper::View::Excel::Template::Plus - Helper Class for Catalyst::View:
 
 =head1 SYNOPSIS
 
-    ./script/MyApp_create.pl view Excel Excel::Template::Plus
+    MyApp_create.pl view Excel Excel::Template::Plus
 
 =head1 METHODS
 
