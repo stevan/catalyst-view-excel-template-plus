@@ -23,9 +23,9 @@ __PACKAGE__->mk_accessors(qw[
 sub new {
     my($class, $c, $args) = @_;
     my $self = $class->next::method($c, $args);
-    
+
     my $config = $c->config->{'View::Excel::Template::Plus'};
-    
+
     $args->{etp_engine} ||= $config->{etp_engine} || 'TT';
     $args->{etp_config} ||= $config->{etp_config} || {};
     $args->{etp_params} ||= $config->{etp_params} || {};
@@ -45,32 +45,32 @@ sub process {
     my $self = shift;
     my $c    = shift;
     my @args = @_;
-    
+
     my $template = $self->get_template_filename($c);
-    
+
     (defined $template)
-        || die 'No template specified for rendering';   
-    
+        || die 'No template specified for rendering';
+
     my $etp_engine = $c->stash->{etp_engine} || $self->etp_engine;
     my $etp_config = $c->stash->{etp_config} || $self->etp_config;
     my $etp_params = $c->stash->{etp_params} || $self->etp_params;
-    
+
     my $excel = $self->create_template_object($c => (
         engine   => $etp_engine,
         template => $template,
         config   => $etp_config,
-        params   => $etp_params,        
+        params   => $etp_params,
     ));
 
     $excel->param( $self->get_template_params($c) );
-    
+
     $c->response->content_type('application/x-msexcel');
     $c->response->body($excel->output);
 }
 
 sub create_template_object {
     my ($self, $c, %options) = @_;
-    Excel::Template::Plus->new( %options );    
+    Excel::Template::Plus->new( %options );
 }
 
 sub get_template_filename {
@@ -105,7 +105,7 @@ Catalyst::View::Excel::Template::Plus - A Catalyst View for Excel::Template::Plu
 =head1 DESCRIPTION
 
 This is a Catalyst View subclass which can handle rendering excel content
-through Excel::Template::Plus. 
+through Excel::Template::Plus.
 
 =head1 CONFIG OPTIONS
 
