@@ -5,7 +5,7 @@ use strict;
 my $build = Module::Build->new(
     module_name => 'Catalyst::View::Excel::Template::Plus',
     license => 'perl',
-    requires => {   
+    requires => {
         'Catalyst::Runtime'     => '0',
         'Excel::Template::Plus' => '0.05',
     },
@@ -14,6 +14,7 @@ my $build = Module::Build->new(
     build_requires => {
         'Test::More'       => '0.62',
         'Test::Exception'  => '0.21',
+        'parent'           => '0',
     },
     create_makefile_pl => 'traditional',
     recursive_test_files => 1,
