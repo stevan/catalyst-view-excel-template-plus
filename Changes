@@ -1,6 +1,9 @@
 Changes for Catalyst::View::Excel::Template::Plus
 # Date format "%A, %B %d, %Y"
 
+0.03 Sunday, April 25, 2010
+    - Simple release from the developement release 0.02_2
+
 0.02_2 Tuesday, April 20, 2010
     - Last development release was shipped with an old Makefile.PL
 
