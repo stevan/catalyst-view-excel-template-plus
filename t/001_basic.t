@@ -29,9 +29,9 @@ BEGIN {
     
     my $excel = $response->content;
     
-    open FOO, '>', 'temp.xls' || die "Could not write temp file for testing : $!";
-    print FOO $excel;
-    close FOO;   
+    open my $fh_foo, '>', 'temp.xls' || die "Could not write temp file for testing : $!";
+    print $fh_foo $excel;
+    close $fh_foo;   
     
     cmp_excel_files("temp.xls", "t/xls/001_basic.xls", '... the generated excel file was correct');
 
