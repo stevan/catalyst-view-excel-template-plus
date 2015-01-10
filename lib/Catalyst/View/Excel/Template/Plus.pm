@@ -64,7 +64,17 @@ sub process {
 
     $excel->param( $self->get_template_params($c) );
 
+    # handle Content-Type
     $c->response->content_type('application/x-msexcel');
+
+    # handle Content-Disposition
+    my $excel_filename = $c->stash->{excel_filename} || 'excel.xls';
+    $excel_filename .= '.xls' unless ($excel_filename =~ /\.xls$/i);
+
+    my $excel_disposition = $c->stash->{excel_disposition} || 'inline';
+    $c->response->headers->header("Content-Disposition"
+        => qq{$excel_disposition; filename="$excel_filename"});
+
     $c->response->body($excel->output);
 }
 
@@ -116,6 +126,16 @@ through Excel::Template::Plus.
 =item I<etp_config>
 
 =item I<etp_params>
+
+=back
+
+=head1 STASH OPTIONS
+
+=over 4
+
+=item I<excel_disposition>
+
+=item I<excel_filename>
 
 =back
 
