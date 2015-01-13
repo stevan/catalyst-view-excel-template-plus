@@ -1,6 +1,10 @@
 Changes for Catalyst::View::Excel::Template::Plus
 # Date format "%A, %B %d, %Y"
 
+0.04 Tues. Jan. 13, 2015
+    - Add support for Content-Disposition via stash options
+        - thanks to Alex Balhatchet for this work
+
 0.03 Sunday, April 25, 2010
     - Simple release from the developement release 0.02_2
 

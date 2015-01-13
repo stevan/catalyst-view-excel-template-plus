@@ -1,4 +1,4 @@
-Catalyst::View::Excel::Template::Plus version 0.01
+Catalyst::View::Excel::Template::Plus version 0.04
 ===========================
 
 See the individual module documentation for more information
@@ -21,7 +21,7 @@ This module requires these other modules and libraries:
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2007 Infinity Interactive, Inc.
+Copyright (C) 2007-2015 Infinity Interactive, Inc.
 
 http://www.iinteractive.com
 

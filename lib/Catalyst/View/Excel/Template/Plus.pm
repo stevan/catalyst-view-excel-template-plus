@@ -9,7 +9,7 @@ use Scalar::Util 'blessed';
 
 use Catalyst::Exception;
 
-our $VERSION   = '0.03';
+our $VERSION   = '0.04';
 our $AUTHORITY = 'cpan:STEVAN';
 
 use base 'Catalyst::View';
@@ -165,7 +165,7 @@ to cpan-RT.
 
 =head1 AUTHOR
 
-Stevan Little E<lt>stevan.little@iinteractive.comE<gt>
+Stevan Little E<lt>stevan@cpan.orgE<gt>
 
 =head1 CONTRIBUTORS
 
@@ -173,7 +173,7 @@ Robert Bohne E<lt>rbo@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Infinity Interactive, Inc.
+Copyright 2007-2015 by Infinity Interactive, Inc.
 
 L<http://www.iinteractive.com>
 

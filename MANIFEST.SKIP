@@ -38,4 +38,4 @@
 
 # Avoid patch remnants
 \.orig$
-\.rej$
+\.rej$^MYMETA\.json$
